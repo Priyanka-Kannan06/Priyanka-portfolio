@@ -1,0 +1,32 @@
+.blob-container {
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.blob-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: blob 10s infinite ease-in-out;
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    border-radius: 42% 58% 39% 61% / 50% 45% 55% 50%;
+  }
+  25% {
+    border-radius: 55% 45% 60% 40% / 40% 55% 45% 60%;
+  }
+  50% {
+    border-radius: 40% 60% 35% 65% / 55% 35% 65% 45%;
+  }
+  75% {
+    border-radius: 60% 40% 50% 50% / 35% 65% 35% 65%;
+  }
+}
