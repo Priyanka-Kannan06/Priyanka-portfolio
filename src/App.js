@@ -12,7 +12,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import CanvasBackground from './components/CanvasBackground';
+
 import GlowCursor from './components/GlowCursor';
 import ResumeModal from './components/ResumeModal';
 import AchievementPolaroid from './components/AchievementPolaroid';
@@ -35,7 +35,7 @@ function App() {
   // phase === 'main'
   return (
     <div className="App">
-      <CanvasBackground />
+     
       <GlowCursor />
       <Navbar />
 
