@@ -28,7 +28,7 @@ const things = [
 const About = () => {
   return (
     <section id="about" className="about-unique">
-      <h2 className="section-title">Things About Me</h2>
+      <h2 className="section-title">Get to Know Me</h2>
       <div className="things-grid">
         {things.map((item, index) => (
           <motion.div

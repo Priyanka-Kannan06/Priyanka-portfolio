@@ -1,8 +1,17 @@
-import React from 'react';
-import '../App.css';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import renalImage from '../assets/renalease.jpg'; // Add your image inside assets folder
+import '../App.css';
 
+// Image imports
+import renalImage from '../assets/renalease.jpg';
+import win1 from '../assets/award1.jpeg';
+import win2 from '../assets/award2.jpeg';
+import win3 from '../assets/award3.jpeg';
+
+// ✅ Slideshow images
+const images = [renalImage, win1, win2, win3];
+
+// ✅ Timeline Data
 const milestones = [
   {
     title: 'Ideathon Victory – Agni College',
@@ -27,10 +36,21 @@ const milestones = [
 ];
 
 const MilestoneTimeline = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3500); // Change image every 3.5s
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="milestone-timeline" id="timeline">
       <h2 className="section-title">RenalEase Journey</h2>
+
       <div className="timeline-wrapper">
+        {/* Left Timeline */}
         <div className="timeline-container">
           {milestones.map((item, index) => (
             <motion.div
@@ -50,25 +70,37 @@ const MilestoneTimeline = () => {
           ))}
         </div>
 
-        {/* Side image */}
-        <motion.div
-          className="timeline-image"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <img src={renalImage} alt="RenalEase Project" />
-        </motion.div>
+        {/* Right Image Slideshow */}
+        <div className="timeline-image">
+          <motion.img
+            key={currentImage}
+            src={images[currentImage]}
+            alt="RenalEase Slide"
+            initial={{ opacity: 0, scale: 0.95, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0)' }}
+            transition={{ duration: 1 }}
+          />
+        </div>
       </div>
 
-      {/* Quote at bottom */}
+      {/* Bottom Quote */}
       <motion.div
         className="timeline-quote"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
       >
-        <h3>“Success is not the destination — it's the trail of impact you leave behind.” 🚀</h3>
+        <h3>“Success is not the destination — it's the trail of impact you leave behind.”</h3>
+      </motion.div>
+
+      {/* Timeline Gallery */}
+      <motion.div
+        className="timeline-gallery"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        
       </motion.div>
     </section>
   );

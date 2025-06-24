@@ -1,5 +1,6 @@
 // src/components/Projects.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
+import ScrollReveal from 'scrollreveal';
 import '../App.css';
 import Tilt from 'react-parallax-tilt';
 
@@ -33,6 +34,28 @@ const projectData = [
 ];
 
 const Projects = () => {
+  useEffect(() => {
+    // Animate the section title
+    ScrollReveal().reveal('.section-title', {
+      delay: 200,
+      distance: '40px',
+      origin: 'top',
+      duration: 800,
+      easing: 'ease-in-out',
+      reset: false
+    });
+
+    // Animate each card
+    ScrollReveal().reveal('.tilt-card', {
+      interval: 150,
+      distance: '60px',
+      origin: 'bottom',
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: false
+    });
+  }, []);
+
   return (
     <section id="projects" className="projects-flip-section parallax-projects">
       <h2 className="section-title">My Projects</h2>

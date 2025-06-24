@@ -28,7 +28,8 @@ const Hero = ({ openResumeModal }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
         >
-          Hi, I'm <span className="highlight">Priyanka Kannan....</span>
+          Hi, I'm <span className="name-highlight">Priyanka Kannan</span>....
+
         </motion.h1>
 
         <motion.h2
