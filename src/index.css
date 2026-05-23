@@ -1,0 +1,21 @@
+/* Optional - base styles */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root{
+  --bg:#0A192F;
+  --card:#112240;
+  --accent:#64FFDA;
+  --heading:#CCD6F6;
+  --text:#8892B0;
+}
+
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
