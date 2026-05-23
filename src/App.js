@@ -4,7 +4,7 @@ import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Loader from './components/loader';
+
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
